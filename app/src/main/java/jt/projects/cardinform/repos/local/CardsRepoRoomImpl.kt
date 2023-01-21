@@ -16,14 +16,4 @@ class CardsRepoRoomImpl(private val db: AppDatabase) : ICardsLocalRepository {
             .subscribeOn(Schedulers.io())
             .subscribe()
     }
-
-//        Completable.create() { emitter ->
-//            try {
-//                db.dao().insert(card)
-//                emitter.onComplete()
-//            } catch (e: java.lang.Exception) {
-//                emitter.onError(e)
-//            }
-//        }.subscribeOn(Schedulers.io())
-//            .subscribe()
 }
