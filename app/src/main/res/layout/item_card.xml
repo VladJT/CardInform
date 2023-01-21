@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="4dp">
 
         <TextView
             android:id="@+id/tv_sheme_label"
@@ -54,12 +55,196 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_brand_label" />
 
 
+        <TextView
+            android:id="@+id/tv_cardnumber_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="CARD Number"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <TextView
+            android:id="@+id/tv_cardnumberlength_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Len"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardnumber_label" />
+
+
+        <TextView
+            android:id="@+id/tv_cardnumberluhn_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="luhn"
+            android:textSize="@dimen/rv_item_text_size"
+
+            app:layout_constraintEnd_toEndOf="@+id/tv_cardnumber_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardnumber_label" />
+
+        <TextView
+            android:id="@+id/tv_cardnumberlength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardnumberlength_label" />
+
+
+        <TextView
+            android:id="@+id/tv_cardnumberluhn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YES"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/tv_cardnumberluhn_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardnumberluhn_label" />
+
+
+        <TextView
+            android:id="@+id/tv_type_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Type"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Debit"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type_label" />
+
+
+        <TextView
+            android:id="@+id/tv_prepaid_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Prepaid"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+        <TextView
+            android:id="@+id/tv_prepaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_prepaid_label" />
+
+        <TextView
+            android:id="@+id/tv_country_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Country"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Denmark"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country_label" />
+
+        <TextView
+            android:id="@+id/tv_coordinates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="56, 10"
+            android:textColor="#2196F3"
+            android:textSize="@dimen/rv_item_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_country" />
+
+
+        <TextView
+            android:id="@+id/tv_bank_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="BANK"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jyske Bank, Hjørring"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bank_label" />
+
+
+        <TextView
+            android:id="@+id/tv_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="www.jyskebank.dk"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="phone"
+            android:text="+4589893300"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+
+        <!-- LINES -->
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="105dp" />
+            app:layout_constraintGuide_begin="124dp" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="224dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
@@ -67,6 +252,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="50dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="101dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

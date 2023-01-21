@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import jt.projects.cardinform.databinding.ItemCardBinding
 import jt.projects.cardinform.model.Card
 
-class CardHistoryAdaper(private val data: MutableList<Card>) :
+class CardHistoryAdaper(
+    private val data: MutableList<Card>,
+    private var onItemClickListener: OnItemClickListener?
+) :
     RecyclerView.Adapter<CardHistoryAdaper.CardViewHolder>() {
 
     fun addItem(card: Card) {
@@ -32,8 +35,26 @@ class CardHistoryAdaper(private val data: MutableList<Card>) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(card: Card) {
-            binding.tvSheme.text = card.scheme
-            binding.tvBrand.text = card.brand
+            with(binding) {
+                tvSheme.text = card.scheme
+                tvBrand.text = card.brand
+                tvCardnumberlength.text = card.number.length.toString()
+                tvCardnumberluhn.text = card.number.luhn
+                tvType.text = card.type
+                tvPrepaid.text = card.prepaid
+                tvCountry.text = card.country.name
+                tvCoordinates.text = "${card.country.latitude}, ${card.country.longitude}"
+                tvBank.text = card.bank.name
+                tvWeb.text = card.bank.url
+                tvPhone.text = card.bank.phone
+
+                tvCoordinates.setOnClickListener {
+                    onItemClickListener?.onCoordinatesClick(
+                        card.country.latitude,
+                        card.country.longitude
+                    )
+                }
+            }
         }
     }
 

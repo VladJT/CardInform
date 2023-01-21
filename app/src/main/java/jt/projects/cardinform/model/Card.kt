@@ -5,7 +5,7 @@ data class Card(
     val brand: String,
     val country: Country,
     val number: Number,
-    val prepaid: Boolean,
+    val prepaid: String,
     val scheme: String,
     val type: String
 )

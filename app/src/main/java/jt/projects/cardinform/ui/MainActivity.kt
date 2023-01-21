@@ -1,5 +1,7 @@
 package jt.projects.cardinform.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +16,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val cardAdapter by lazy { CardHistoryAdaper(mutableListOf()) }
+    private val onItemClickListener = object : OnItemClickListener{
+        override fun onCoordinatesClick(latitude: String, longitude: String) {
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://maps.google.com?z=12&q=$latitude,$longitude"))
+            startActivity(intent)
+        }
+    }
+
+    private val cardAdapter by lazy { CardHistoryAdaper(mutableListOf(), onItemClickListener) }
 
     private val viewModel: CardViewModel by lazy {
         ViewModelProvider.NewInstanceFactory().create(CardViewModel::class.java).apply {
@@ -45,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                 binding.loadingFrameLayout.visibility = View.GONE
                 binding.searchInputLayout.error = null
                 cardAdapter.addItem(data.serverResponseData)
+                binding.mainActivityRecyclerview.smoothScrollToPosition(0)
             }
             is CardData.Loading -> {
                 binding.loadingFrameLayout.visibility = View.VISIBLE
