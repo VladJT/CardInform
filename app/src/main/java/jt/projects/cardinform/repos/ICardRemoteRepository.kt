@@ -1,4 +1,4 @@
-package jt.projects.cardinform.domain
+package jt.projects.cardinform.repos
 
 import io.reactivex.rxjava3.core.Single
 import jt.projects.cardinform.model.Card
