@@ -7,5 +7,22 @@ data class Card(
     val number: Number,
     val prepaid: String,
     val scheme: String,
-    val type: String
+    val type: String,
+    val countryName: String,
+)
+
+fun Card.toCardEntity(num: String): CardEntity = CardEntity(
+    cardNumber = num,
+    scheme = scheme,
+    brand = brand,
+    len = number.length,
+    luhn = number.luhn,
+    type = type,
+    latitude = country?.latitude,
+    longitude = country?.longitude,
+    prepaid = prepaid,
+    countryName = country?.name,
+    bankName = bank?.name,
+    phone = bank?.phone,
+    url = bank?.url
 )

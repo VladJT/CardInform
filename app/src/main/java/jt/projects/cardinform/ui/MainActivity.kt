@@ -16,16 +16,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val onItemClickListener = object : OnItemClickListener{
+    private val onItemClickListener = object : OnItemClickListener {
         override fun onCoordinatesClick(latitude: String, longitude: String) {
             val intent = Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://maps.google.com?z=12&q=$latitude,$longitude"))
+                Uri.parse("https://maps.google.com?z=12&q=$latitude,$longitude")
+            )
             startActivity(intent)
         }
     }
 
-    private val cardAdapter by lazy { CardHistoryAdaper(mutableListOf(), onItemClickListener) }
+    private val cardAdapter by lazy { CardHistoryAdaper(onItemClickListener) }
 
     private val viewModel: CardViewModel by lazy {
         ViewModelProvider.NewInstanceFactory().create(CardViewModel::class.java).apply {
@@ -40,13 +41,29 @@ class MainActivity : AppCompatActivity() {
 
         App.instance.appComponent.inject(this)
 
-        viewModel.getLiveData().observe(this) { renderData(it) }
+        initViewModel()
+        initUi()
+    }
 
-        binding.searchButton.setOnClickListener { viewModel.loadCardByNumber(binding.searchEditText.text.toString()) }
-
+    private fun initUi() {
         binding.mainActivityRecyclerview.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = cardAdapter
+        }
+        binding.searchButton.setOnClickListener { viewModel.loadCardByNumber(binding.searchEditText.text.toString()) }
+    }
+
+    private fun initViewModel() {
+        with(viewModel) {
+            getCardLiveData().observe(this@MainActivity) {
+                renderData(it)
+            }
+
+            getCardsHistoryLiveData().observe(this@MainActivity) {
+                cardAdapter.addItems(it)
+            }
+
+            loadCardsFromLocalRepo()
         }
     }
 

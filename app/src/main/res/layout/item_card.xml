@@ -193,7 +193,7 @@
             android:textIsSelectable="true"
             android:textSize="@dimen/rv_item_text_size"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
         <TextView
             android:id="@+id/tv_bank"
@@ -215,7 +215,7 @@
             android:textIsSelectable="true"
             android:textSize="@dimen/rv_item_text_size"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="@+id/guideline1" />
+            app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
         <TextView
             android:id="@+id/tv_phone"
@@ -226,7 +226,42 @@
             android:textIsSelectable="true"
             android:textSize="@dimen/rv_item_text_size"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_web" />
+
+
+        <TextView
+            android:id="@+id/tv_cardNumber_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:text="Card Number"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4444..."
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/tv_cardNumber_label" />
+
+
+        <TextView
+            android:id="@+id/tv_dateofresponce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="21.01.2023 16:00"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/rv_item_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_coordinates" />
 
 
         <!-- LINES -->
@@ -236,7 +271,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="124dp" />
+            app:layout_constraintGuide_begin="158dp" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -244,7 +279,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="224dp" />
+            app:layout_constraintGuide_begin="245dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

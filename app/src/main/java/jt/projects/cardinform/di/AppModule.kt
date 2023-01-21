@@ -1,4 +1,4 @@
-package jt.projects.gbpopularlibs.di
+package jt.projects.cardinform.di
 
 import dagger.Module
 import dagger.Provides
@@ -7,7 +7,7 @@ import javax.inject.Singleton
 
 
 @Module
-class AppModule(val app: App) {
+class AppModule(private val app: App) {
     @Singleton
     @Provides
     fun app(): App {

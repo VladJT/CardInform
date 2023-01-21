@@ -1,10 +1,10 @@
 package jt.projects.cardinform.viewmodel
 
-import jt.projects.cardinform.model.Card
+import jt.projects.cardinform.model.CardEntity
 
 
 sealed class CardData {
-    data class Success(val serverResponseData: Card) :
+    data class Success(val serverResponseData: CardEntity) :
         CardData()
 
     data class Error(val error: Throwable) : CardData()

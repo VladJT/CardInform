@@ -24,9 +24,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search_edit_text"
             android:layout_width="match_parent"
-            android:text="45717360"
             android:layout_height="wrap_content"
-            android:inputType="number" />
+            android:inputType="number"
+            android:text="45717360" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -41,11 +41,11 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:scrollbars="vertical"
         android:id="@+id/main_activity_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#EDEAEA"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_input_layout" />

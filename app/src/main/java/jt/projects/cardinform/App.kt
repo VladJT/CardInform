@@ -1,9 +1,10 @@
 package jt.projects.cardinform
 
 import android.app.Application
-import jt.projects.gbpopularlibs.di.AppComponent
-import jt.projects.gbpopularlibs.di.AppModule
-import jt.projects.gbpopularlibs.di.DaggerAppComponent
+import jt.projects.cardinform.di.AppComponent
+import jt.projects.cardinform.di.AppModule
+import jt.projects.cardinform.di.DaggerAppComponent
+
 
 class App : Application() {
     companion object {
